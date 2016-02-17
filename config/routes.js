@@ -44,7 +44,7 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
-    
+    'post /pull' : 'VersionController.pull',
     'get /user': 'UserController.index',
     'get /device': 'DeviceController.index',
     
