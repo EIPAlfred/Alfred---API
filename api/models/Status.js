@@ -9,6 +9,8 @@ module.exports = {
 
     attributes: {
 
+    	
+
 	owner: {
 	model: 'device'
     },
