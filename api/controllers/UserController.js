@@ -65,7 +65,8 @@ module.exports = {
    */
     delete: function (req, res) {
       var params = req.params.all()
-	
+
+    
       User.destroy({id: params.id}).exec(function deleteCB(err, deleted){
             return res.json({
               200: 'Delete user with id ' + deleted.id
