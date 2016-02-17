@@ -36,12 +36,12 @@ module.exports = {
 		    date: '',
 		    info: 'first info'
 		})
-		 .exec(function(err, pet) {});
+		.exec(function(err, pet) {});
 		
 		return res.json({
 		    200: 'Created device with name ' + created.name
 		});
-	    });
+	});
   },
 
 
