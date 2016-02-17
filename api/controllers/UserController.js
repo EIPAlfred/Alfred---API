@@ -28,7 +28,7 @@ module.exports = {
       var params = req.params.all()
 
       if (!params.name || !params.password)
-	  return res.json(401, {err: 'name and password required'});
+        return res.json(401, {err: 'name and password required'});
       User.create({name: params.name,
 		   email: params.email,
 		   password: params.password})
@@ -63,16 +63,19 @@ module.exports = {
   /**
    * `UserController.delete()`
    */
-    delete: function (req, res)
-    {
+    delete: function (req, res) {
       var params = req.params.all()
 	
-	User.destroy({id: params.id}).exec(function deleteCB(err, deleted){
-	      return res.json({
-		  200: 'Delete user with id ' + deleted.id
-	      });
-	});
-    }
+      User.destroy({id: params.id}).exec(function deleteCB(err, deleted){
+            return res.json({
+              200: 'Delete user with id ' + deleted.id
+            });
+      });
+    },
+
+  connect: function (req, res) {
+    var params = req.params.all();
+  }
 					 					  
 };
 
