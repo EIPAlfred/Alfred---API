@@ -65,7 +65,6 @@ module.exports = {
    */
     delete: function (req, res) {
       var params = req.params.all()
-    var toto;
 
       User.destroy({id: params.id}).exec(function deleteCB(err, deleted){
             return res.json({
