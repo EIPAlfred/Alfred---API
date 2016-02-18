@@ -26,19 +26,20 @@ module.exports = {
    * `DeviceController.create()`
    */
     create: function (req, res) {
-	var params = req.params.all()
-	if (!params.name)
+	   var params = req.params.all()
+      return res.json({debug: params});
+	   if (!params.name)
 	    return res.json(401, {err: 'name required'});
-	Device.create({name: params.name})
+	   
+     Device.create({name: params.name})
 	    .exec(function createCB(err,created){
-
-		Status.create({
-		    owner: created.id,
-		    date: '',
-		    info: 'first info'
-		})
-		.exec(function(err, pet) {});
-		
+      	 	Status.create({
+      		    owner: created.id,
+      		    date: '',
+      		    info: ''
+      		})
+      		.exec(function(err, pet) {});
+  		
 		return res.json({
 		    200: 'Created device with name ' + created.name
 		});
