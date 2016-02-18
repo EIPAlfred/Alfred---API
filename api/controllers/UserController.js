@@ -6,7 +6,7 @@
  */
 
 module.exports = {
-	
+
 
 
   /**
@@ -34,11 +34,10 @@ module.exports = {
 		   password: params.password})
 		  .exec(function createCB(err,created){
 		     return res.json({
-			 200: 'Created user with name ' + created.name
+           200: 'Created user with name ' + created.name
 		     });
       });
   },
-
 
   /**
    * `UserController.show()`
@@ -75,7 +74,12 @@ module.exports = {
 
   connect: function (req, res) {
     var params = req.params.all();
+    var passport = require("passport");
+
+    if (!params.login || !params.password) {
+      return (res.json({401: "Missing parameters"}));
+    }
   }
-					 					  
+
 };
 
