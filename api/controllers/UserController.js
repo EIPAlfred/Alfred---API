@@ -72,7 +72,7 @@ module.exports = {
       });
     },
 
-  connect: function (req, res) {
+  login: function (req, res) {
     var params = req.params.all();
     var passport = require("passport");
 
