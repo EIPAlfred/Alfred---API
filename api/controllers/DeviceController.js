@@ -13,9 +13,10 @@ module.exports = {
    * `DeviceController.index()`
    */
   index: function (req, res) {
+    //Device.find().populate('status').exec(function(err, devices) {
       Device.find().exec(function(err, devices) {
 	       return res.json({
-	        Devices: devices
+	             Devices: devices
 	        });
       });
   },
