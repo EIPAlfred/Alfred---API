@@ -27,7 +27,9 @@ module.exports = {
    */
     create: function (req, res) {
 	   var params = req.params.all()
-      return res.json({debug: params});
+      return res.json({
+        200: params
+    });
 	   if (!params.name)
 	    return res.json(401, {err: 'name required'});
 	   
