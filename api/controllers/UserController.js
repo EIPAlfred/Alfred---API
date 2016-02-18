@@ -79,6 +79,7 @@ module.exports = {
     if (!params.login || !params.password) {
       return (res.json({401: "Missing parameters"}));
     }
+    return (res.json({200: "Thank you"}));
   }
 
 };
