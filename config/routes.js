@@ -44,14 +44,16 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
-    'post /pull' : 'VersionController.pull',
-    'get /user': 'UserController.index',
-    'get /device': 'DeviceController.index',
-    
-    'post /updateDeviceInfo': 'DeviceController.update',
-    'post /createDevice': 'DeviceController.create',
+  'post /pull' : 'VersionController.pull',
+  'get /user': 'UserController.index',
+  'get /device': 'DeviceController.index',
 
-    'post /deleteDevice': 'DeviceController.delete',
-    'post /createUser': 'UserController.create',
-    'post /deleteUser': 'UserController.delete'
+  'post /updateDeviceInfo': 'DeviceController.update',
+  'post /createDevice': 'DeviceController.create',
+
+  'post /deleteDevice': 'DeviceController.delete',
+  'post /createUser': 'UserController.create',
+  'post /deleteUser': 'UserController.delete',
+
+  'post /user/login': 'UserController.login'
 };
