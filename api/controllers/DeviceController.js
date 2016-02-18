@@ -71,28 +71,29 @@ module.exports = {
   update: function (req, res) {
       var params = req.params.all()
       if (!jsonServices.validateJson(req.param('infosJson')))
-	  return res.json({
-	      error: 'Wrong json format'
-	  });
+      	  return res.json({
+      	      error: 'Wrong json format'
+      	  });
 
       var header = jsonServices.getHeader(req.param('infosJson'));
       var info = jsonServices.getInfo(req.param('infosJson'));
       
       Device.find({ name:header[0] })
-	  .populate('status')
-	  .exec(function(error, device){
-	      if (error)
-		  return res.json({
-		      401: 'Error device not found'
-		  });   
-	      device[0].status.add({infos: info });
-	      device[0].save(function (err){
-	      });
-	  });
+        	  .populate('status')
+        	  .exec(function(error, device){
+      	      if (error)
+      		  return res.json({
+      		      401: 'Error device not found'
+      		  });   
+      	      device[0].status.add({infos: info });
+      	      device[0].save(function (err){
+
+	           });
+	     });
       return res.json({
-	  200: 'Device updated !'
+	        200: 'Device updated !'
       });      
-},
+  },
   /**
    * `DeviceController.delete()`
    */
@@ -101,7 +102,7 @@ module.exports = {
 	
 	  Device.destroy({id: params.id}).exec(function deleteCB(err, deleted){
 	      return res.json({
-		  200: 'Delete device with id ' + deleted.id
+		          200: 'Delete device with id ' + deleted.id
 	      });
 	});
   }
